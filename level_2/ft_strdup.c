@@ -4,18 +4,19 @@ char    *ft_strdup(char *src)
 {
     int i = 0;
     int len = 0;
-    char *dest;
+    char *res;
 
     while (src[len])
         len++;
-    dest = (char *)malloc(sizeof(char) * (len + 1));
-    if (!dest)
+    len--;
+    res = (char *)malloc(sizeof(char) * (len + 1));
+    if (!res)
         return (NULL);
     while (src[i])
     {
-        dest[i] = src[i];
+        res[i] = src[i];
         i++;
     }
-    dest[i] = '\0';
-    return (dest);
+    res[i] = '\0';
+    return (res);
 }
